@@ -1,0 +1,133 @@
+/* ===============================
+   🌿 Modern WMS AMSAN Theme
+   =============================== */
+
+:root {
+    --primary: #00ff4d;
+    --secondary: #d1f0db;
+    --bg: #f9fafb;
+    --text: #1f2937;
+    --card-bg: #ffffff;
+}
+
+/* Reset */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sidebar Modern */
+.sidebar {
+    background: var(--card-bg);
+    border-right: 1px solid var(--secondary);
+    border-radius: 0 1.5rem 1.5rem 0;
+    width: 260px;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.sidebar-header {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--primary);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--secondary);
+    text-align: center;
+}
+
+.sidebar nav {
+    padding: 1rem;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    color: var(--text);
+    font-weight: 500;
+    transition: all 0.25s ease-in-out;
+}
+
+.sidebar a:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+    transform: translateX(6px);
+}
+
+.sidebar a.active {
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Main Container */
+.main-container {
+    flex: 1;
+    padding: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--secondary);
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    transition: all 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.page-title {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Dashboard grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.dashboard-card h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.dashboard-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 0.25rem;
+}
+
+.dashboard-card {
+    text-align: center;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--secondary);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
