@@ -7,7 +7,6 @@
 </head>
 <body>
 
-<!-- Sidebar -->
 <aside class="sidebar w-64 flex-shrink-0">
     <div class="p-6 text-xl font-extrabold text-[var(--primary)] border-b border-[var(--secondary)]">
         📦 WMS AMSAN
