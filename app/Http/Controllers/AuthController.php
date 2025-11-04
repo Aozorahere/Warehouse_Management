@@ -9,29 +9,27 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
-        // Jika sudah login, langsung arahkan ke dashboard
         if (Auth::check()) {
             return redirect()->route('dashboard');
         }
-
         return view('auth.login');
     }
 
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'username' => ['required', 'string'],
             'password' => ['required'],
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard'); // langsung ke dashboard
+            return redirect()->intended('/dashboard');
         }
 
         return back()->withErrors([
-            'email' => 'Email atau password salah.',
-        ])->onlyInput('email');
+            'username' => 'Username atau password salah.',
+        ])->onlyInput('username');
     }
 
     public function logout(Request $request)
