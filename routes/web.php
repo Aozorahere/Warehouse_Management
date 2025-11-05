@@ -2,11 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PrintController;
+use App\Http\Controllers\ReceiptController;
 
 // === AUTH ROUTES ===
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/print/rak/{rak}', [PrintController::class, 'printByRak'])->name('print.rak');
+Route::get('/resi/cetak/{rak}', [ReceiptController::class, 'generateReceipt'])->name('resi.cetak');
 
 // === PROTECTED ROUTES (HANYA UNTUK ADMIN YANG LOGIN) ===
 Route::middleware('auth')->group(function () {
