@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - AMSAN WMS</title>
-      @vite(['resources/css/app.css'])
+    @vite(['resources/css/app.css'])
 </head>
-<body>
+
+<body class="login-page"> <!-- PENTING: agar CSS login tidak bentrok -->
+
   <div class="login-card">
     <h1>AMSAN WMS</h1>
     <p>Warehouse Management System</p>
@@ -36,6 +38,6 @@
       © {{ date('Y') }} <span>AMSAN Electronics</span>. All rights reserved.
     </footer>
   </div>
-</body>
 
+</body>
 </html>

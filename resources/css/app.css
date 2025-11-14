@@ -1,5 +1,9 @@
-/* Login */
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LOGIN */
+.login-page {
     margin: 0;
     height: 100vh;
     font-family: "Poppins", sans-serif;
@@ -10,11 +14,12 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: hidden;
+    position: relative;
 }
 
-/* === Floating light circles (optional aesthetic) === */
-body::before,
-body::after {
+/* Floating light circles (background aesthetic) */
+.login-page::before,
+.login-page::after {
     content: "";
     position: absolute;
     border-radius: 50%;
@@ -23,7 +28,7 @@ body::after {
     z-index: -1;
 }
 
-body::before {
+.login-page::before {
     width: 400px;
     height: 400px;
     background: rgba(110, 231, 183, 0.4);
@@ -31,7 +36,7 @@ body::before {
     left: -100px;
 }
 
-body::after {
+.login-page::after {
     width: 500px;
     height: 500px;
     background: rgba(52, 211, 153, 0.3);
@@ -39,8 +44,8 @@ body::after {
     right: -150px;
 }
 
-/* === Login Card === */
-.login-card {
+/* Login card */
+.login-page .login-card {
     width: 420px;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(25px);
@@ -54,27 +59,27 @@ body::after {
     transition: 0.3s ease;
 }
 
-.login-card:hover {
+.login-page .login-card:hover {
     transform: scale(1.01);
     box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
 }
 
-/* === Header === */
-.login-card h1 {
+/* Header */
+.login-page .login-card h1 {
     font-size: 2.3rem;
     font-weight: 700;
     color: #059669;
     margin-bottom: 6px;
 }
 
-.login-card p {
+.login-page .login-card p {
     font-size: 0.95rem;
     color: #4b5563;
     margin-bottom: 25px;
 }
 
-/* === Input Field === */
-.login-card label {
+/* Input label */
+.login-page .login-card label {
     display: block;
     font-size: 0.9rem;
     color: #111827;
@@ -82,8 +87,9 @@ body::after {
     margin-bottom: 6px;
 }
 
-.login-card input[type="text"],
-.login-card input[type="password"] {
+/* Input fields */
+.login-page .login-card input[type="text"],
+.login-page .login-card input[type="password"] {
     width: 100%;
     padding: 12px 14px;
     font-size: 0.95rem;
@@ -94,14 +100,14 @@ body::after {
     background: rgba(255, 255, 255, 0.8);
 }
 
-.login-card input[type="text"]:focus,
-.login-card input[type="password"]:focus {
+.login-page .login-card input[type="text"]:focus,
+.login-page .login-card input[type="password"]:focus {
     border-color: #34d399;
     box-shadow: 0 0 0 3px rgba(110, 231, 183, 0.3);
 }
 
-/* === Remember + Forgot === */
-.remember-forgot {
+/* Remember + Forgot */
+.login-page .remember-forgot {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,18 +116,18 @@ body::after {
     margin-top: 5px;
 }
 
-.remember-forgot a {
+.login-page .remember-forgot a {
     color: #059669;
     text-decoration: none;
     font-weight: 500;
 }
 
-.remember-forgot a:hover {
+.login-page .remember-forgot a:hover {
     text-decoration: underline;
 }
 
-/* === Submit Button === */
-button[type="submit"] {
+/* Submit button */
+.login-page button[type="submit"] {
     width: 100%;
     background: linear-gradient(to right, #10b981, #059669);
     color: white;
@@ -136,13 +142,13 @@ button[type="submit"] {
     transition: 0.25s;
 }
 
-button[type="submit"]:hover {
+.login-page button[type="submit"]:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
 }
 
-/* === Error Message === */
-.error-message {
+/* Error message */
+.login-page .error-message {
     background: #fef2f2;
     border: 1px solid #fecaca;
     color: #dc2626;
@@ -153,195 +159,15 @@ button[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
-/* === Footer === */
-footer {
+/* Footer */
+.login-page footer {
     text-align: center;
     margin-top: 30px;
     font-size: 0.8rem;
     color: #6b7280;
 }
 
-footer span {
+.login-page footer span {
     color: #059669;
-    font-weight: 600;
-}
-
-/* Dashboard */
-body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    background: linear-gradient(135deg, #ecfdf5, #ffffff, #d1fae5);
-    color: #111827;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* === Navbar === */
-.navbar {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid #d1fae5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.nav-brand h1 {
-    margin: 0;
-    color: #059669;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.nav-brand p {
-    margin: 0;
-    font-size: 0.8rem;
-    color: #6b7280;
-}
-
-.nav-links {
-    display: flex;
-    gap: 18px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #047857;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #10b981;
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.dark-btn,
-.logout-btn {
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.dark-btn {
-    background: #e0f2f1;
-    color: #065f46;
-}
-
-.dark-btn:hover {
-    background: #a7f3d0;
-}
-
-.logout-btn {
-    background: #dc2626;
-    color: white;
-}
-
-.logout-btn:hover {
-    background: #b91c1c;
-}
-
-/* === Dashboard Layout === */
-.dashboard {
-    flex: 1;
-    padding: 40px 80px;
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.card {
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.1);
-    transition: 0.3s;
-    text-align: center;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.15);
-}
-
-.card h3 {
-    color: #065f46;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-}
-
-.card .number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #059669;
-}
-
-.card .number.red {
-    color: #dc2626;
-}
-
-.card .number.green {
-    color: #16a34a;
-}
-
-/* === Activity Section === */
-.activity {
-    background: white;
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.08);
-}
-
-.activity h2 {
-    margin-top: 0;
-    color: #047857;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-}
-
-.activity ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.activity li {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-}
-
-.activity strong {
-    color: #059669;
-}
-
-/* === Footer === */
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.85rem;
-    color: #6b7280;
-    border-top: 1px solid #d1fae5;
-    background: rgba(255, 255, 255, 0.7);
-}
-
-footer span {
-    color: #047857;
     font-weight: 600;
 }
