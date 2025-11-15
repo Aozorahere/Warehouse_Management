@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --- Small custom components for AMSAN theme --- */
+@layer components {
+    .sidebar-item {
+        @apply block px-4 py-2 rounded-lg text-gray-700 hover:bg-amsan-light hover:text-amsan-dark transition;
+    }
+    .sidebar-item.active {
+        @apply bg-amsan text-white font-semibold;
+    }
+    .card {
+        @apply bg-white rounded-xl p-5 shadow-sm border border-gray-100;
+    }
+    .card-plain {
+        @apply bg-white rounded-lg p-4 border border-gray-100;
+    }
+    .btn-amsan {
+        @apply inline-flex items-center px-4 py-2 bg-amsan text-white rounded-lg shadow hover:bg-amsan-dark transition;
+    }
+}
+
 /* LOGIN */
 .login-page {
     margin: 0;

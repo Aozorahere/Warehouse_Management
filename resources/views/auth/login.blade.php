@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css'])
 </head>
 
-<body class="login-page"> <!-- PENTING: agar CSS login tidak bentrok -->
+<body class="login-page">
 
   <div class="login-card">
     <h1>AMSAN WMS</h1>
