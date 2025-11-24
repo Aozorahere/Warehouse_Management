@@ -22,6 +22,6 @@ class Product extends Model
     // Relasi opsional ke tabel racks
     public function rack()
     {
-        return $this->belongsTo(Rack::class, 'rack_id');
+        return $this->belongsTo(rack::class, 'rack_id');
     }
 }

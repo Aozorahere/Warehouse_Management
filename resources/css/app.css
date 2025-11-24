@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- Small custom components for AMSAN theme --- */
 @layer components {
     .sidebar-item {
         @apply block px-4 py-2 rounded-lg text-gray-700 hover:bg-amsan-light hover:text-amsan-dark transition;
