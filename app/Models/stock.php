@@ -3,13 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Product;
 
 class Stock extends Model
 {
-    protected $table = 'stocks';   // nama tabel
+    protected $table = 'stocks';
+
     protected $fillable = [
         'product_id',
-        'jumlah',
-        'lokasi_rak'
+        'jumlah_stok',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'product_id');
+    }
 }

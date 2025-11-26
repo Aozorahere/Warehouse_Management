@@ -20,46 +20,53 @@
         </div>
 
         <nav class="flex-1 p-4">
-            <ul class="space-y-2">
+    <ul class="space-y-2">
 
-                <li>
-                    <a href="{{ url('/dashboard') }}" class="nav-item-light {{ request()->is('dashboard') ? 'active-light' : '' }}">
-                        🏠 Dashboard
-                    </a>
-                </li>
+        <li>
+            <a href="{{ route('dashboard') }}"
+               class="nav-item-light {{ request()->routeIs('dashboard') ? 'active-light' : '' }}">
+                🏠 Dashboard
+            </a>
+        </li>
 
-                <li>
-                    <a href="{{ url('/produk') }}" class="nav-item-light {{ request()->is('produk*') ? 'active-light' : '' }}">
-                        📦 Produk
-                    </a>
-                </li>
+        <li>
+            <a href="{{ route('produk.index') }}"
+               class="nav-item-light {{ request()->routeIs('produk.index') ? 'active-light' : '' }}">
+                📦 Produk
+            </a>
+        </li>
 
-                <li>
-                    <a href="{{ url('/stok') }}" class="nav-item-light {{ request()->is('stok*') ? 'active-light' : '' }}">
-                        📊 Stok
-                    </a>
-                </li>
+        <li>
+            <a href="{{ route('produk.stok') }}"
+               class="nav-item-light {{ request()->routeIs('produk.stok') ? 'active-light' : '' }}">
+                📊 Stok
+            </a>
+        </li>
 
-                <li>
-                    <a href="{{ url('/rak') }}" class="nav-item-light {{ request()->is('rak*') ? 'active-light' : '' }}">
-                        🗄️ Rak
-                    </a>
-                </li>
+        <li>
+            <a href="{{ route('produk.rak') }}"
+               class="nav-item-light {{ request()->routeIs('produk.rak') ? 'active-light' : '' }}">
+                🗄️ Rak
+            </a>
+        </li>
 
-                <li>
-                    <a href="{{ url('/barang-masuk') }}" class="nav-item-light {{ request()->is('barang-masuk*') ? 'active-light' : '' }}">
-                        ⬇️ Barang Masuk
-                    </a>
-                </li>
+        <li>
+            <a href="{{ route('produk.masuk') }}"
+               class="nav-item-light {{ request()->routeIs('produk.masuk') ? 'active-light' : '' }}">
+                ⬇️ Barang Masuk
+            </a>
+        </li>
 
-                <li>
-                    <a href="{{ url('/barang-keluar') }}" class="nav-item-light {{ request()->is('barang-keluar*') ? 'active-light' : '' }}">
-                        ⬆️ Barang Keluar
-                    </a>
-                </li>
+        <li>
+            <a href="{{ route('produk.keluar') }}"
+               class="nav-item-light {{ request()->routeIs('produk.keluar') ? 'active-light' : '' }}">
+                ⬆️ Barang Keluar
+            </a>
+        </li>
 
-            </ul>
-        </nav>
+    </ul>
+</nav>
+
 
         <div class="p-4 border-t border-gray-200">
             <form action="{{ route('logout') }}" method="POST">

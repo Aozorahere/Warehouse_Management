@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Rack;
+use App\Models\Stock;
 
 class Product extends Model
 {
@@ -19,9 +21,13 @@ class Product extends Model
         'rack_id'
     ];
 
-    // Relasi opsional ke tabel racks
     public function rack()
     {
-        return $this->belongsTo(rack::class, 'rack_id');
+        return $this->belongsTo(Rack::class, 'rack_id');
+    }
+
+    public function stock()
+    {
+        return $this->hasOne(Stock::class, 'product_id');
     }
 }
