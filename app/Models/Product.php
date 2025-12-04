@@ -4,8 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Rack;
-use App\Models\Stock;
 
 class Product extends Model
 {
@@ -14,20 +12,31 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = [
-        'kode_barang',
-        'nama_barang',
+        'sku',
+        'nama_produk',
+        'kategori',
+        'rak_id',
         'satuan',
-        'stok_minimum',
-        'rack_id'
+        'deskripsi',
     ];
 
     public function rack()
     {
-        return $this->belongsTo(Rack::class, 'rack_id');
+        return $this->belongsTo(Rack::class, 'rak_id');
     }
 
     public function stock()
     {
         return $this->hasOne(Stock::class, 'product_id');
+    }
+
+    public function inbounds()
+    {
+        return $this->hasMany(Inbound::class, 'product_id');
+    }
+
+    public function outbounds()
+    {
+        return $this->hasMany(Outbound::class, 'product_id');
     }
 }

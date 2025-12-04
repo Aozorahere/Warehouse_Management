@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Product;
 
 class Stock extends Model
 {
+    use HasFactory;
+
     protected $table = 'stocks';
 
     protected $fillable = [
         'product_id',
-        'jumlah_stok',
+        'total_stok',
     ];
 
     public function product()

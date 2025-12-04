@@ -51,9 +51,9 @@
         </li>
 
         <li>
-            <a href="{{ route('produk.masuk') }}"
-               class="nav-item-light {{ request()->routeIs('produk.masuk') ? 'active-light' : '' }}">
-                ⬇️ Barang Masuk
+            <a href="{{ route('barang-masuk.index') }}"
+                class="nav-item-light {{ request()->routeIs('barang-masuk.index') ? 'active-light' : '' }}">
+                 ⬇️ Barang Masuk
             </a>
         </li>
 

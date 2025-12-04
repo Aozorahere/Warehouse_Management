@@ -14,6 +14,21 @@ class Rack extends Model
     protected $fillable = [
         'kode_rak',
         'lokasi',
-        'kapasitas'
+        'kapasitas',
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'rak_id');
+    }
+
+    public function inbounds()
+    {
+        return $this->hasMany(Inbound::class, 'rack_id');
+    }
+
+    public function outbounds()
+    {
+        return $this->hasMany(Outbound::class, 'rack_id');
+    }
 }

@@ -5,27 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Inbound extends Model
+class Receipt extends Model
 {
     use HasFactory;
 
-    protected $table = 'incoming_items';
+    protected $table = 'receipts';
 
     protected $fillable = [
+        'kode_resi',
         'product_id',
         'rack_id',
         'jumlah',
+        'jenis',
         'tanggal',
-        'keterangan',
     ];
 
     public function product()
     {
-        return $this->belongsTo(Product::class, 'product_id');
+        return $this->belongsTo(Product::class);
     }
 
     public function rack()
     {
-        return $this->belongsTo(Rack::class, 'rack_id');
+        return $this->belongsTo(Rack::class);
     }
 }
