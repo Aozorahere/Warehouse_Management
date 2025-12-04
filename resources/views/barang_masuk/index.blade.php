@@ -62,7 +62,7 @@
 
             <tbody>
                 @foreach($incoming as $item)
-                    <tr>
+                    <tr>    
                         <td class="p-3">{{ $item->tanggal }}</td>
                         <td class="p-3">{{ $item->product->nama }}</td>
                         <td class="p-3">{{ $item->jumlah }}</td>
